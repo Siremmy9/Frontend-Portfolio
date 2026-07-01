@@ -1,0 +1,1622 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Emmanuel James — Frontend Developer specializing in React, JavaScript, and modern web applications. Building performant, accessible, and beautiful user interfaces." />
+    <meta
+      name="keywords"
+      content="Emmanuel James, Frontend Developer, React Developer, JavaScript, UI Engineer, Web Developer, Portfolio" />
+    <meta name="author" content="Emmanuel James" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Emmanuel James — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Building modern, responsive web applications with clean UI and excellent user experience." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emmanueljames.dev" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Emmanuel James — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer specializing in React, JavaScript, and modern UIs." />
+    <title>Emmanuel James — Frontend Developer</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233B82F6'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>E</text></svg>" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loader" aria-hidden="true">
+      <div class="loader-inner">
+        <div class="loader-logo">Emmy-J</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-follower" aria-hidden="true"></div>
+
+    <!-- Scroll Progress -->
+    <div
+      id="scroll-progress"
+      role="progressbar"
+      aria-label="Page scroll progress"></div>
+
+    <!-- Theme Toggle -->
+    <button
+      id="theme-toggle"
+      class="theme-btn"
+      aria-label="Toggle dark/light mode">
+      <span class="theme-icon">☀️</span>
+    </button>
+
+    <!-- Navigation -->
+    <header id="navbar" role="banner">
+      <nav class="nav-container" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="nav-logo" aria-label="Emmanuel James - Home">
+          <span class="logo-text">EJ</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" role="menu" aria-hidden="true">
+        <a href="#home" class="mobile-link" role="menuitem">Home</a>
+        <a href="#about" class="mobile-link" role="menuitem">About</a>
+        <a href="#skills" class="mobile-link" role="menuitem">Skills</a>
+        <a href="#projects" class="mobile-link" role="menuitem">Projects</a>
+        <a href="#experience" class="mobile-link" role="menuitem">Experience</a>
+        <a href="#services" class="mobile-link" role="menuitem">Services</a>
+        <a href="#contact" class="mobile-link" role="menuitem">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero" aria-label="Introduction">
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+        <div class="hero-bg-blobs" aria-hidden="true">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-text reveal-up">
+            <!-- <p class="hero-greeting">Hello World 👋</p> -->
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Emmanuel James</span>
+            </h1>
+            <div class="hero-subtitle">
+              <span class="subtitle-prefix">I'm a </span>
+              <span
+                id="typing-text"
+                class="typing-text"
+                aria-live="polite"></span>
+              <span class="cursor-blink" aria-hidden="true">|</span>
+            </div>
+            <p class="hero-description">
+              I craft pixel-perfect, performant web experiences that users love.
+              Specializing in modern React applications with clean architecture
+              and accessible design.
+            </p>
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-primary magnetic">
+                <span>Hire Me</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="mycv.pdf"
+                download
+                class="btn btn-outline magnetic"
+                aria-label="Download Resume PDF">
+                <span>Download Resume</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true">
+                  <path
+                    d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </svg>
+              </a>
+            </div>
+            <div
+              class="hero-socials"
+              role="list"
+              aria-label="Social media links">
+              <a
+                href="https://github.com/siremmy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                role="listitem"
+                aria-label="GitHub profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/siremmy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                role="listitem"
+                aria-label="LinkedIn profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/jamesemman09"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                role="listitem"
+                aria-label="X (Twitter) profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+              <a
+                href="mailto:siremmy9@gmail.com"
+                class="social-icon"
+                role="listitem"
+                aria-label="Send email">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal-right">
+            <div class="avatar-container">
+              <div class="avatar-ring"></div>
+              <div
+                class="avatar-placeholder"
+                aria-label="Emmanuel James profile photo">
+                <span class="avatar-initials"
+                  ><img src="images/me.jpeg" alt=""
+                /></span>
+                <div class="avatar-glow"></div>
+              </div>
+              <div class="floating-badges">
+                <div class="badge badge-react">⚛ React</div>
+                <div class="badge badge-js">JS</div>
+                <div class="badge badge-ts">CSS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+          <div class="scroll-dot"></div>
+          <span>Scroll</span>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section about" aria-label="About me">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">Get To Know Me</p>
+            <h2 class="section-title">
+              About <span class="gradient-text">Me</span>
+            </h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text reveal-left">
+              <p class="about-lead">
+                I'm a passionate Frontend Developer with a keen eye for design
+                and a drive for creating exceptional digital experiences.
+              </p>
+              <p class="about-body">
+                With 3+ years of experience building modern web applications, I
+                specialize in turning complex problems into elegant,
+                user-friendly interfaces. My toolkit includes React, TypeScript,
+                and the latest CSS techniques — I care deeply about
+                accessibility, performance, and writing code that teams actually
+                enjoy maintaining.
+              </p>
+              <p class="about-body">
+                When I'm not coding, I'm exploring new design trends,
+                contributing to open source, or mentoring junior developers. I
+                believe great software is built at the intersection of
+                engineering rigor and design empathy.
+              </p>
+              <div class="about-qualities">
+                <div class="quality-pill">⚡ Fast Learner</div>
+                <div class="quality-pill">🎯 Detail Oriented</div>
+                <div class="quality-pill">🤝 Team Player</div>
+                <div class="quality-pill">🚀 Self-Starter</div>
+              </div>
+            </div>
+
+            <div class="about-stats reveal-right">
+              <div class="stats-grid">
+                <div class="stat-card glass">
+                  <span class="stat-number" data-count="20">0</span>
+                  <span class="stat-suffix">+</span>
+                  <p class="stat-label">Projects Completed</p>
+                </div>
+                <div class="stat-card glass">
+                  <span class="stat-number" data-count="10">0</span>
+                  <span class="stat-suffix">+</span>
+                  <p class="stat-label">Happy Clients</p>
+                </div>
+                <div class="stat-card glass">
+                  <span class="stat-number" data-count="3">0</span>
+                  <span class="stat-suffix">+</span>
+                  <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-card glass">
+                  <span class="stat-number" data-count="100">0</span>
+                  <span class="stat-suffix">%</span>
+                  <p class="stat-label">Commitment</p>
+                </div>
+              </div>
+
+              <div class="about-cards">
+                <div class="about-card glass reveal-up">
+                  <div class="about-card-icon">🧩</div>
+                  <h3>Problem Solving</h3>
+                  <p>
+                    Turning complex requirements into clean, maintainable
+                    solutions.
+                  </p>
+                </div>
+                <div class="about-card glass reveal-up">
+                  <div class="about-card-icon">✨</div>
+                  <h3>Clean Code</h3>
+                  <p>Writing readable, scalable, and well-documented code.</p>
+                </div>
+                <div class="about-card glass reveal-up">
+                  <div class="about-card-icon">📱</div>
+                  <h3>Responsive Design</h3>
+                  <p>Pixel-perfect layouts from mobile to 4K displays.</p>
+                </div>
+                <div class="about-card glass reveal-up">
+                  <div class="about-card-icon">⚡</div>
+                  <h3>Performance</h3>
+                  <p>
+                    Optimizing for Core Web Vitals and exceptional Lighthouse
+                    scores.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section skills" aria-label="Technical skills">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">What I Work With</p>
+            <h2 class="section-title">
+              Technical <span class="gradient-text">Skills</span>
+            </h2>
+          </div>
+
+          <!-- Skills Marquee -->
+          <div
+            class="marquee-wrapper reveal-up"
+            aria-label="Skills marquee"
+            aria-hidden="true">
+            <div class="marquee-track">
+              <div class="marquee-content">
+                <span class="marquee-item">React</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">TypeScript</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">JavaScript</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Tailwind CSS</span>
+                <span class="marquee-dot">◆</span>
+                <!-- <span class="marquee-item">Redux</span>
+                <span class="marquee-dot">◆</span> -->
+                <span class="marquee-item">Vite</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Git</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">REST APIs</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">CSS3</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">HTML5</span>
+                <span class="marquee-dot">◆</span>
+                <!-- <span class="marquee-item">Sass</span>
+                <span class="marquee-dot">◆</span> -->
+                <span class="marquee-item">Figma</span>
+                <span class="marquee-dot">◆</span>
+              </div>
+              <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item">React</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">TypeScript</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">JavaScript</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Tailwind CSS</span>
+                <span class="marquee-dot">◆</span>
+                <!-- <span class="marquee-item">Redux</span>
+                <span class="marquee-dot">◆</span> -->
+                <span class="marquee-item">Vite</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Git</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">REST APIs</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">CSS3</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">HTML5</span>
+                <span class="marquee-dot">◆</span>
+                <!-- <span class="marquee-item">Sass</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Figma</span>
+                <span class="marquee-dot">◆</span> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Languages -->
+            <div class="skill-category glass reveal-up">
+              <h3 class="category-title">
+                <span class="category-icon">🔤</span> Languages
+              </h3>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">HTML5</span>
+                    <span class="skill-pct">98%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="98"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="HTML5 proficiency 98%">
+                    <div class="skill-fill" data-width="98"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">CSS3</span>
+                    <span class="skill-pct">95%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="CSS3 proficiency 95%">
+                    <div class="skill-fill" data-width="95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">JavaScript (ES6+)</span>
+                    <span class="skill-pct">92%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="92"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="92"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">TypeScript</span>
+                    <span class="skill-pct">60%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="80"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="skill-category glass reveal-up">
+              <h3 class="category-title">
+                <span class="category-icon">⚛️</span> Frontend
+              </h3>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">React</span
+                    ><span class="skill-pct">90%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Tailwind CSS</span
+                    ><span class="skill-pct">92%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="92"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="92"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Bootstrap</span
+                    ><span class="skill-pct">85%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Sass</span
+                    ><span class="skill-pct">80%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="80"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- State Management -->
+            <div class="skill-category glass reveal-up">
+              <h3 class="category-title">
+                <span class="category-icon">🔄</span> State Management
+              </h3>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Context API</span
+                    ><span class="skill-pct">88%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="88"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="88"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Redux Toolkit</span
+                    ><span class="skill-pct">82%</span>
+                  </div>
+                  <div
+                    class="skill-bar"
+                    role="progressbar"
+                    aria-valuenow="82"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="skill-fill" data-width="82"></div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="category-title" style="margin-top: 1.5rem">
+                <span class="category-icon">🛠️</span> Tools
+              </h3>
+              <div class="skills-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">npm</span>
+              </div>
+            </div>
+
+            <!-- Extras -->
+            <div class="skill-category glass reveal-up">
+              <h3 class="category-title">
+                <span class="category-icon">✨</span> Extras
+              </h3>
+              <div class="skills-tags extras-tags">
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Responsive Design</span>
+                <span class="skill-tag">Accessibility</span>
+                <span class="skill-tag">Performance</span>
+                <span class="skill-tag">SEO</span>
+                <span class="skill-tag">Web Vitals</span>
+                <span class="skill-tag">WCAG</span>
+                <span class="skill-tag">Agile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section
+        id="projects"
+        class="section projects"
+        aria-label="Projects portfolio">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">What I've Built</p>
+            <h2 class="section-title">
+              Featured <span class="gradient-text">Projects</span>
+            </h2>
+          </div>
+
+          <div class="project-controls reveal-up">
+            <div
+              class="filter-buttons"
+              role="group"
+              aria-label="Filter projects by technology">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="react">React</button>
+              <button class="filter-btn" data-filter="javascript">
+                JavaScript
+              </button>
+              <button class="filter-btn" data-filter="tailwind">
+                Tailwind
+              </button>
+              <button class="filter-btn" data-filter="api">API</button>
+            </div>
+            <div class="search-wrapper">
+              <input
+                type="search"
+                id="project-search"
+                class="project-search"
+                placeholder="Search projects…"
+                aria-label="Search projects" />
+              <svg
+                class="search-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="projects-grid" id="projects-grid" role="list">
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react tailwind api"
+              data-name="modern portfolio">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder">
+                  <span class="project-emoji">🎨</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="#"
+                    class="overlay-btn"
+                    aria-label="View Modern Portfolio on GitHub"
+                    >GitHub</a
+                  >
+                  <a
+                    href="#"
+                    class="overlay-btn overlay-btn-accent"
+                    aria-label="Live demo of Modern Portfolio"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Modern Portfolio</h3>
+                <p class="project-desc">
+                  A stunning, fully responsive developer portfolio with dark
+                  mode, animations, and perfect Lighthouse scores.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Tailwind</span
+                  ><span class="tag">Framer Motion</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react tailwind api"
+              data-name="e-commerce store">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 260deg">
+                  <span class="project-emoji">🛒</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="#"
+                    class="overlay-btn"
+                    aria-label="View E-Commerce Store on GitHub"
+                    >GitHub</a
+                  >
+                  <a
+                    href="#"
+                    class="overlay-btn overlay-btn-accent"
+                    aria-label="Live demo of E-Commerce Store"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">E-Commerce Store</h3>
+                <p class="project-desc">
+                  Full-featured shopping app with cart management, Stripe
+                  payments, product filtering, and real-time inventory.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Redux</span
+                  ><span class="tag">Tailwind</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react api javascript"
+              data-name="weather dashboard">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 200deg">
+                  <span class="project-emoji">🌤️</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Weather Dashboard</h3>
+                <p class="project-desc">
+                  Real-time weather app with 7-day forecasts, interactive maps,
+                  and geolocation support using OpenWeather API.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">API</span
+                  ><span class="tag">Charts</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react api javascript"
+              data-name="movie app">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 340deg">
+                  <span class="project-emoji">🎬</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Movie App</h3>
+                <p class="project-desc">
+                  Movie discovery platform with search, filtering by genre,
+                  watchlist management, and TMDB API integration.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">TMDB API</span
+                  ><span class="tag">Context</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="javascript react"
+              data-name="todo application">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 120deg">
+                  <span class="project-emoji">✅</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Todo Application</h3>
+                <p class="project-desc">
+                  Feature-rich task manager with drag-and-drop, categories,
+                  priority levels, and local storage persistence.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">DnD</span
+                  ><span class="tag">LocalStorage</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react tailwind api"
+              data-name="banking dashboard">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 40deg">
+                  <span class="project-emoji">🏦</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Banking Dashboard</h3>
+                <p class="project-desc">
+                  Secure financial dashboard with transaction history, spending
+                  analytics, card management, and dark UI.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Tailwind</span
+                  ><span class="tag">Charts.js</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react javascript"
+              data-name="chat app ui">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 180deg">
+                  <span class="project-emoji">💬</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Chat App UI</h3>
+                <p class="project-desc">
+                  Real-time chat interface with WebSocket integration, emoji
+                  reactions, media sharing, and read receipts.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span
+                  ><span class="tag">WebSockets</span
+                  ><span class="tag">CSS</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react tailwind api"
+              data-name="admin dashboard">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 280deg">
+                  <span class="project-emoji">📊</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Admin Dashboard</h3>
+                <p class="project-desc">
+                  Enterprise analytics dashboard with data visualization, user
+                  management, real-time charts, and role-based access.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Recharts</span
+                  ><span class="tag">Tailwind</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react javascript tailwind"
+              data-name="fitness tracker">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 150deg">
+                  <span class="project-emoji">💪</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Fitness Tracker</h3>
+                <p class="project-desc">
+                  Workout logging app with exercise library, progress charts,
+                  streak tracking, and personalized workout plans.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Tailwind</span
+                  ><span class="tag">Charts</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card glass"
+              role="listitem"
+              data-tags="react javascript api"
+              data-name="blog platform">
+              <div class="project-img-wrap">
+                <div class="project-img-placeholder" style="--img-hue: 320deg">
+                  <span class="project-emoji">✍️</span>
+                </div>
+                <div class="project-overlay">
+                  <a href="#" class="overlay-btn">GitHub</a>
+                  <a href="#" class="overlay-btn overlay-btn-accent"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-name">Blog Platform</h3>
+                <p class="project-desc">
+                  Full-featured blog with markdown editor, categories, comments,
+                  SEO optimization, and headless CMS integration.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Markdown</span
+                  ><span class="tag">API</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div id="no-results" class="no-results" hidden>
+            <p>No projects match your search. Try a different term.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section
+        id="experience"
+        class="section experience"
+        aria-label="Work experience">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">My Journey</p>
+            <h2 class="section-title">
+              Experience & <span class="gradient-text">Timeline</span>
+            </h2>
+          </div>
+
+          <div class="timeline" role="list">
+            <div class="timeline-item reveal-left" role="listitem">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">Frontend Developer</h3>
+                    <p class="timeline-company">Freelance · Remote</p>
+                  </div>
+                  <span class="timeline-period">2023 — Present</span>
+                </div>
+                <p class="timeline-desc">
+                  Building responsive web applications for clients across
+                  e-commerce, fintech, and SaaS. Delivered 15+ production
+                  applications using React and Tailwind CSS with consistent 95+
+                  Lighthouse performance scores.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">React</span
+                  ><span class="tag">TypeScript</span
+                  ><span class="tag">Tailwind</span
+                  ><span class="tag">REST APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal-right" role="listitem">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">UI Developer Intern</h3>
+                    <p class="timeline-company">Tech Startup · Hybrid</p>
+                  </div>
+                  <span class="timeline-period">2022 — 2023</span>
+                </div>
+                <p class="timeline-desc">
+                  Collaborated with a cross-functional team to redesign the
+                  company's core product UI. Improved page load time by 40%
+                  through code splitting and lazy loading. Implemented a design
+                  system used across 3 products.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">React</span><span class="tag">Sass</span
+                  ><span class="tag">Figma</span
+                  ><span class="tag">Performance</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal-left" role="listitem">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">Open Source Contributor</h3>
+                    <p class="timeline-company">GitHub · Remote</p>
+                  </div>
+                  <span class="timeline-period">2022 — Present</span>
+                </div>
+                <p class="timeline-desc">
+                  Active contributor to open source React component libraries
+                  and developer tools. Authored accessibility improvements and
+                  responsive design patterns adopted by 500+ developers.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">Open Source</span
+                  ><span class="tag">Accessibility</span
+                  ><span class="tag">Documentation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section
+        id="services"
+        class="section services-section"
+        aria-label="Services offered">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">What I Offer</p>
+            <h2 class="section-title">
+              My <span class="gradient-text">Services</span>
+            </h2>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card glass reveal-up">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <h3>Frontend Development</h3>
+              <p>
+                End-to-end development of modern, scalable web applications with
+                clean architecture and best practices.
+              </p>
+            </div>
+            <div class="service-card glass reveal-up">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true">
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Responsive Web Design</h3>
+              <p>
+                Pixel-perfect, mobile-first designs that look stunning on every
+                device — from 320px to 4K.
+              </p>
+            </div>
+            <div class="service-card glass reveal-up">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3>Landing Pages</h3>
+              <p>
+                High-converting landing pages with smooth animations, strong
+                CTAs, and fast load times.
+              </p>
+            </div>
+            <div class="service-card glass reveal-up">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />
+                </svg>
+              </div>
+              <h3>React Applications</h3>
+              <p>
+                Scalable React apps with hooks, context, Redux, and clean
+                component architecture.
+              </p>
+            </div>
+            <div class="service-card glass reveal-up">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true">
+                  <path
+                    d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              </div>
+              <h3>UI Implementation</h3>
+              <p>
+                Turning Figma or XD designs into production-ready, interactive,
+                accessible code.
+              </p>
+            </div>
+            <div class="service-card glass reveal-up">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <h3>Performance Optimization</h3>
+              <p>
+                Auditing and optimizing existing sites for Core Web Vitals, SEO,
+                and Lighthouse scores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section
+        id="testimonials"
+        class="section testimonials"
+        aria-label="Client testimonials">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">What They Say</p>
+            <h2 class="section-title">
+              Client <span class="gradient-text">Testimonials</span>
+            </h2>
+          </div>
+
+          <div
+            class="testimonial-slider reveal-up"
+            role="region"
+            aria-label="Testimonials carousel"
+            aria-live="polite">
+            <div class="testimonial-track" id="testimonial-track">
+              <div
+                class="testimonial-card glass"
+                role="article"
+                aria-label="Testimonial from Sarah Chen">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote class="testimonial-text">
+                  "Emmanuel delivered an exceptional e-commerce platform ahead
+                  of schedule. His attention to detail, clean code, and
+                  performance optimizations exceeded our expectations. Highly
+                  recommend!"
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-avatar" aria-hidden="true">
+                    <img
+                      src="images/ceo2.jpg"
+                      alt="Esther-Photo"
+                      class="photo" />
+                  </div>
+                  <div>
+                    <p class="author-name">Biyaya Esther</p>
+                    <p class="author-role">Product Manager, Beauty Concepts</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="testimonial-card glass"
+                role="article"
+                aria-label="Testimonial from Marcus Johnson">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote class="testimonial-text">
+                  "Working with Emmanuel was a fantastic experience. He
+                  transformed our outdated website into a modern, fast, and
+                  beautiful platform that our users love. The results speak for
+                  themselves."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div
+                    class="author-avatar"
+                    aria-hidden="true"
+                    style="--av-color: #6366f1">
+                    <img
+                      src="images/ceo.jpg"
+                      alt="James Obed Photo"
+                      class="photo" />
+                  </div>
+                  <div>
+                    <p class="author-name">Obed James</p>
+                    <p class="author-role">
+                      CEO, Sowftech Digital Innovation, Lagos, Nigeria
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="testimonial-card glass"
+                role="article"
+                aria-label="Testimonial from Aisha Patel">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote class="testimonial-text">
+                  "Emmanuel's React skills are top-notch. He built our dashboard
+                  from scratch in record time, with perfect responsiveness and
+                  smooth animations. Our team still compliments the code
+                  quality."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div
+                    class="author-avatar"
+                    aria-hidden="true"
+                    style="--av-color: #06b6d4">
+                    <img
+                      src="images/ceo3.JPG"
+                      alt="patience-photo"
+                      class="photo" />
+                  </div>
+                  <div>
+                    <p class="author-name">Patience</p>
+                    <p class="author-role">CTO, FinanceFlow</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="testimonial-controls"
+              role="group"
+              aria-label="Testimonial navigation">
+              <button
+                class="testimonial-btn"
+                id="prev-testimonial"
+                aria-label="Previous testimonial">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div
+                class="testimonial-dots"
+                id="testimonial-dots"
+                role="tablist"
+                aria-label="Select testimonial"></div>
+              <button
+                class="testimonial-btn"
+                id="next-testimonial"
+                aria-label="Next testimonial">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact" aria-label="Contact me">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <p class="section-eyebrow">Let's Talk</p>
+            <h2 class="section-title">
+              Get In <span class="gradient-text">Touch</span>
+            </h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal-left">
+              <p class="contact-lead">
+                Ready to bring your vision to life? I'm available for freelance
+                projects, full-time opportunities, and collaborations.
+              </p>
+
+              <div class="contact-cards">
+                <a
+                  href="mailto:emmanuel@example.com"
+                  class="contact-card glass">
+                  <div class="contact-card-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true">
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="contact-card-label">Email</p>
+                    <p class="contact-card-value">siremmy9@gmail.com</p>
+                  </div>
+                </a>
+                <div class="contact-card glass">
+                  <div class="contact-card-icon" style="--icon-color: #6366f1">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true">
+                      <path
+                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.12 4 2 2 0 012.1 2h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.27-1.44a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="contact-card-label">Phone</p>
+                    <p class="contact-card-value">+(234) 81-4171-3798</p>
+                  </div>
+                </div>
+                <div class="contact-card glass">
+                  <div class="contact-card-icon" style="--icon-color: #06b6d4">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="contact-card-label">Location</p>
+                    <p class="contact-card-value">
+                      Available Worldwide · Remote
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-card glass">
+                  <div class="contact-card-icon" style="--icon-color: #f0f0f0">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="contact-card-label">GitHub</p>
+                    <p class="contact-card-value">github.com/siremmy9</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form-wrap reveal-right">
+              <form
+                id="contact-form"
+                class="contact-form glass"
+                novalidate
+                aria-label="Contact form">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="form-input"
+                    placeholder="John Samuel"
+                    autocomplete="name"
+                    required
+                    aria-required="true" />
+                  <span class="form-error" id="name-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="form-input"
+                    placeholder="john@example.com"
+                    autocomplete="email"
+                    required
+                    aria-required="true" />
+                  <span class="form-error" id="email-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    id="contact-subject"
+                    name="subject"
+                    class="form-input"
+                    placeholder="Project Inquiry"
+                    required
+                    aria-required="true" />
+                  <span
+                    class="form-error"
+                    id="subject-error"
+                    role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-message" class="form-label"
+                    >Message</label
+                  >
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    class="form-input form-textarea"
+                    placeholder="Tell me about your project…"
+                    rows="5"
+                    required
+                    aria-required="true"></textarea>
+                  <span
+                    class="form-error"
+                    id="message-error"
+                    role="alert"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full magnetic">
+                  <span id="submit-text">Send Message</span>
+                  <svg
+                    id="submit-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div
+      id="toast"
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"></div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="#home"
+              class="footer-logo"
+              aria-label="Emmanuel James - Back to top">
+              <span>EJ</span>
+            </a>
+            <p class="footer-tagline">
+              Crafting digital experiences<br />one component at a time.
+            </p>
+            <div class="footer-socials" aria-label="Social media links">
+              <a
+                href="https://github.com/siremmy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/siremmy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/jamesemman09"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <h4 class="footer-nav-title">Navigation</h4>
+            <ul role="list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-services">
+            <h4 class="footer-nav-title">Services</h4>
+            <ul role="list">
+              <li>Frontend Development</li>
+              <li>React Applications</li>
+              <li>Responsive Design</li>
+              <li>Landing Pages</li>
+              <li>Performance Optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="footer-year"></span> Emmanuel James. All rights
+            reserved.
+          </p>
+          <!-- <p class="footer-made">Made with ❤️ and lots of ☕</p> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="back-to-top"
+      class="back-to-top"
+      aria-label="Scroll back to top"
+      hidden>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        aria-hidden="true">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
