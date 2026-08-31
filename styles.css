@@ -1,10 +1,3 @@
-/* ============================================================
-   EMMANUEL JAMES — PORTFOLIO STYLES
-   Mobile First · WCAG · Dark/Light Mode
-   ============================================================ */
-
-/* ── RESET & BASE ─────────────────────────────────────────── */
-
 .filter-buttons *::before,
 *::after {
   box-sizing: border-box;
@@ -113,7 +106,6 @@ ul {
   list-style: none;
 }
 
-/* ── UTILITY ──────────────────────────────────────────────── */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -207,7 +199,9 @@ ul {
   border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
-/* ── LOADER ───────────────────────────────────────────────── */
+.bbSite {
+  border-radius: 2rem;
+}
 #loader {
   position: fixed;
   inset: 0;
